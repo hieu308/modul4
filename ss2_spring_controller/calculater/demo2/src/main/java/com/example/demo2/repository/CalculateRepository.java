@@ -19,8 +19,15 @@ public class CalculateRepository implements ICalculateRepository {
                 result = a * b;
                 break;
             case "/":
-                result = a / b;
-                break;
+                if(b!=0){
+                    result = a / b;
+                    break;
+                }else{
+                    throw new IllegalArgumentException("Số chia phải khác 0");
+
+                }
+
+
 
         }
         return result;

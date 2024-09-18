@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.io.IOException;
+
 @Controller
 public class HomeController {
     @Autowired
@@ -20,17 +22,14 @@ public class HomeController {
     }
 
     @PostMapping("/calculate")
-    public String calculate(@RequestParam("a") double a, @RequestParam("b") double b, @RequestParam("operation") String operation, RedirectAttributes redirectAttributes) {
-        if (b != 0) {
+    public String calculate(@RequestParam("a") double a, @RequestParam("b") double b, @RequestParam("operation") String operation, Model model) {
+        try {
             double result = calculateService.calculate(a, b, operation);
-
-            redirectAttributes.addFlashAttribute("result", result);
-        } else {
-            redirectAttributes.addFlashAttribute("result", "số chia phải khác 0");
+            model.addAttribute("result", result);
+        } catch (Exception  e) {
+            model.addAttribute("result",  e.getMessage());
         }
-
-        return "redirect:/";
-
+        return "index";
     }
 
 }
