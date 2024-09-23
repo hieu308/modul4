@@ -3,41 +3,63 @@ package com.example.demo.repository;
 import com.example.demo.model.Products;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 import java.util.*;
+@Transactional
 @Repository
 public class ProductsRepository implements IProductsRepository {
-    private static final Map<Integer, Products> productsList = new HashMap<>();
-
-    static {
-        productsList.put(1, new Products(1, "SuZuKi", 20, "ngon ", "Việt Nam"));
-        productsList.put(2, new Products(2, "yamaha", 30, "chất lượng tốt", "Nhật"));
-        productsList.put(3, new Products(3, "VINFASRT", 40, "cực xịn ", "Việt Nam"));
-    }
-
+    @PersistenceContext
+    private EntityManager entityManager;
     @Override
     public List<Products> findAll() {
-        return new ArrayList<>(productsList.values());
+        TypedQuery<Products> query = entityManager.createQuery("select c from Products c", Products.class);
+        return query.getResultList();
     }
-
     @Override
+
     public void save(Products products) {
-        productsList.put(products.getId(), products);
+        if (products.getId() != 0) {
+            entityManager.merge(products);
+        } else {
+            entityManager.persist(products);
+        }
 
     }
-
     @Override
     public Products findById(int id) {
-        return productsList.get(id);
+        TypedQuery<Products> query = entityManager.createQuery("select c from Products c where c.id=:id", Products.class);
+        query.setParameter("id", id);
+        try {
+            return query.getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        }
     }
 
     @Override
     public void delete(int id) {
-        productsList.remove(id);
+        Products products = findById(id);
+        if (products != null) {
+            entityManager.remove(products);
+        }
     }
 
     @Override
     public void update(int id, Products products) {
-        productsList.put(id, products);
-
+        Products existingProduct = findById(id);
+        if (existingProduct != null) {
+            existingProduct.setName(products.getName());
+            existingProduct.setPrice(products.getPrice());
+            existingProduct.setDescription(products.getDescription());
+            existingProduct.setBrand(products.getBrand());
+            entityManager.merge(existingProduct);
+        } else {
+            System.out.println("Product not found with ID: " + id);
+        }
     }
+
 }

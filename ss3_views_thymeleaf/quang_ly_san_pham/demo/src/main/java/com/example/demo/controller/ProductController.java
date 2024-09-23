@@ -25,12 +25,12 @@ public class ProductController {
     }
     @GetMapping("/create")
     public String create(Model model) {
+        System.out.println( "alo");
         model.addAttribute("product", new Products());
         return "create";
     }
     @PostMapping("/save")
     public String save(@ModelAttribute("product") Products product, RedirectAttributes redirectAttributes) {
-        product.setId((int)(Math.random() * 1000));
         productsService.save(product);
         redirectAttributes.addFlashAttribute("success", true); // Thêm thuộc tính success
         return "redirect:/";
