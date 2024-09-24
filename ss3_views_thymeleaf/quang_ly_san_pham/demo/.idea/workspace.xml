@@ -5,14 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8af76cf7-ec42-4e71-a9d9-9409bab6c0e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/AppConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Products.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repository/ProductsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repository/ProductsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/ProductsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss7_spring_data_repository/demo/src/main/java/com/example/demo/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss7_spring_data_repository/demo/src/main/java/com/example/demo/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss7_spring_data_repository/demo1/src/main/java/com/example/demo/model/Blog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss7_spring_data_repository/demo1/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss7_spring_data_repository/demo2/src/main/java/com/example/demo/controller/BlogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss7_spring_data_repository/demo2/src/main/java/com/example/demo/model/Blog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss7_spring_data_repository/demo2/src/main/java/com/example/demo/repository/IBlogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss7_spring_data_repository/demo2/src/main/java/com/example/demo/service/BlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss7_spring_data_repository/demo2/src/main/java/com/example/demo/service/IBlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss7_spring_data_repository/demo2/src/main/java/com/example/demo/service/IGenerateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss7_spring_data_repository/demo2/src/main/resources/templates/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +72,7 @@
     "Tomcat Server.Tomcat 9.0.932.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/module_4/bai_tap/ss3_views_thymeleaf/quang_ly_san_pham/demo",
+    "last_opened_file_path": "D:/module_4/bai_tap/ss7_spring_data_repository/demo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -190,7 +194,10 @@
       <updated>1726920001840</updated>
       <workItem from="1726920002887" duration="172000" />
       <workItem from="1727021470156" duration="1752000" />
-      <workItem from="1727052731737" duration="9692000" />
+      <workItem from="1727052731737" duration="10600000" />
+      <workItem from="1727064643730" duration="1029000" />
+      <workItem from="1727072775941" duration="8442000" />
+      <workItem from="1727139885747" duration="5176000" />
     </task>
     <servers />
   </component>

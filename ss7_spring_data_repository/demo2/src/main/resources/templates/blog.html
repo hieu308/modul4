@@ -29,43 +29,48 @@
 </div>
 
 <div class="container ">
-    <h1 class="mb-3 mt-2 text-center bg-secondary text-white ">List Cars</h1>
+    <h1 class="mb-3 mt-2 text-center bg-secondary text-white ">List blog</h1>
     <a th:href="@{/create}">
 
-    <button type="button" class="btn btn-primary mb-3">Add Products</button>
+        <button type="button" class="btn btn-primary mb-3">Add blog</button>
     </a>
 
+
 </div>
+<form action="/search" method="post" class="d-flex  mb-3 container w-50" >
+    <input name="nameBlog" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success"  type="submit">Search</button>
+</form>
 <div class="container">
     <table class="table table-hover table-bordered  " style="table-layout: fixed; width: 100%;">
         <thead class="table-info">
         <tr>
             <td class="t" style="width: 5%;">#</td>
             <td class="t" style="width: 10%;">ID</td>
-            <td class="t">Name Product</td>
-            <td class="t">Price</td>
-            <td class="t">Description</td>
-            <td class="t" style="width: 12%">Brand</td>
+            <td class="t">Title</td>
+            <td class="t">Author</td>
+            <td class="t">Content</td>
             <td class="t">Action</td>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="product,loop:${productsList}">
+        <tr th:each="blog,loop:${blogs}">
             <td th:text="${loop.count}" class="t"></td>
-            <td th:text="${product.getId()}" class="t"></td>
-            <td th:text="${product.getName()}" class="t"></td>
-            <td th:text="${product.getPrice()}+'$'" class="t"></td>
-            <td th:text="${product.getDescription()}" class="t"></td>
-            <td th:text="${product.getBrand()}" class="t"></td>
+            <td th:text="${blog.getId()}" class="t"></td>
+            <td th:text="${blog.getTitle()}" class="t"></td>
+            <td th:text="${blog.getAuthor()}" class="t"></td>
+            <td th:text="${blog.getContent()}" class="t"></td>
+
+
             <td class="t">
-                <a th:href="@{/view(id=${product.getId()})}">
+                <a th:href="@{/view(id=${blog.getId()})}">
                     <button class="btn btn-info">View</button>
                 </a>
-                <a th:href="@{/edit(id=${product.getId()})}">
+                <a th:href="@{/edit(id=${blog.getId()})}">
                     <button class="btn btn-warning">Edit</button>
                 </a>
                 <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"
-                        th:data-id="${product.getId()}">Delete
+                        th:data-id="${blog.getId()}">Delete
                 </button>
             </td>
         </tr>
@@ -85,7 +90,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <form th:action="@{/delete}" class="delete-form" method="post">
-                    <input type="hidden" name="productId" id="product-id-input"/>
+                    <input type="hidden" name="blogId" id="product-id-input"/>
                     <button type="submit" class="btn btn-primary">Delete</button>
                 </form>
             </div>

@@ -5,76 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00ac158e-be0d-4e47-b10c-c63acbf6bcb7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/calculater/demo2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/calculater/demo2/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/calculater/demo2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/calculater/demo2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/calculater/demo2/src/main/java/com/example/demo2/AppConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/calculater/demo2/src/main/java/com/example/demo2/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/calculater/demo2/src/main/java/com/example/demo2/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/calculater/demo2/src/main/java/com/example/demo2/repository/CalculateRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/calculater/demo2/src/main/java/com/example/demo2/repository/ICalculateRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/calculater/demo2/src/main/java/com/example/demo2/service/CalculateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/calculater/demo2/src/main/java/com/example/demo2/service/ICalculateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/calculater/demo2/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/them_gia_vi/demo/src/main/java/com/example/demo/AppConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/them_gia_vi/demo/src/main/java/com/example/demo/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/them_gia_vi/demo/src/main/java/com/example/demo/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/them_gia_vi/demo/src/main/webapp/WEB-INF/views/order.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/them_gia_vi/demo1/src/main/java/com/example/demo1/AppConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/them_gia_vi/demo1/src/main/java/com/example/demo1/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/them_gia_vi/demo1/src/main/java/com/example/demo1/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/them_gia_vi/demo1/src/main/java/com/example/demo1/repository/Calculate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/them_gia_vi/demo1/src/main/java/com/example/demo1/repository/ICalculate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/them_gia_vi/demo1/src/main/java/com/example/demo1/service/CalculateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/them_gia_vi/demo1/src/main/java/com/example/demo1/service/ICalculateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../ss2_spring_controller/them_gia_vi/demo1/src/main/webapp/WEB-INF/view/calculate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/src/main/java/com/example/demo1/AppConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/src/main/java/com/example/demo1/AppInitializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/src/main/java/com/example/demo1/controller/HomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/src/main/java/com/example/demo1/service/Calculate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/src/main/java/com/example/demo1/service/ICalculate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/src/main/webapp/WEB-INF/views/home.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/chuyen_doi_tien_te/demo1/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/.idea/tu_dien.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/src/main/java/com/example/demo/AppConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/src/main/java/com/example/demo/AppInitializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/src/main/java/com/example/demo/TranslateController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/src/main/java/com/example/demo/repository/Dictionary.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/src/main/java/com/example/demo/repository/IDictionary.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/src/main/java/com/example/demo/service/DictionaryService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/src/main/java/com/example/demo/service/IDictionaryService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/src/main/webapp/WEB-INF/views/home.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring_mvc/tu_dien/demo/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_spring_data_repository/demo2/src/main/java/com/example/demo/controller/BlogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_spring_data_repository/demo2/src/main/java/com/example/demo/model/Blog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_spring_data_repository/demo2/src/main/java/com/example/demo/repository/IBlogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_spring_data_repository/demo2/src/main/java/com/example/demo/service/BlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_spring_data_repository/demo2/src/main/java/com/example/demo/service/IBlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_spring_data_repository/demo2/src/main/resources/templates/blog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_spring_data_repository/demo2/src/main/resources/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_spring_data_repository/demo2/src/main/resources/templates/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss7_spring_data_repository/demo2/src/main/resources/templates/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss3_views_thymeleaf/quang_ly_san_pham/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss3_views_thymeleaf/quang_ly_san_pham/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss3_views_thymeleaf/quang_ly_san_pham/demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss3_views_thymeleaf/quang_ly_san_pham/demo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss3_views_thymeleaf/quang_ly_san_pham/demo/src/main/webapp/WEB-INF/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss3_views_thymeleaf/quang_ly_san_pham/demo/src/main/webapp/WEB-INF/views/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,9 +26,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2mEB6TvyvKOoPLG49SGvau3Nd98" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -97,7 +39,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/module_4/bai_tap/ss1_spring_mvc/chuyen_doi_tien_te",
+    "last_opened_file_path": "D:/module_3/modul3/ss11_mvc/demo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -123,6 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1726631679317</updated>
       <workItem from="1726631680357" duration="619000" />
+      <workItem from="1727173919605" duration="47000" />
     </task>
     <servers />
   </component>
