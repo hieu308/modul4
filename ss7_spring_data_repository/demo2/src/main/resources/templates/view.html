@@ -13,13 +13,16 @@
 <div class="container">
     <h1 class="mb-5 mt-4 text-center bg-primary text-white p-3">Bog detail</h1>
     <a th:href="@{/}" class="btn btn-secondary mb-4">Back to Home</a>
-
     <div class="card mb-4">
         <div class="card-body">
             <p class="card-text"><strong>ID:</strong> <span th:text="${blog.getId()}"></span></p>
             <p class="card-text"><strong>Title:</strong> <span th:text="${blog.getTitle()}"></span></p>
             <p class="card-text"><strong>Author:</strong> <span th:text="${blog.getAuthor()}"></span></p>
             <p class="card-text"><strong>Content: <br> </strong> <span th:text="${blog.getContent()}"></span></p>
+            <p class="card-text"><strong>Category: <br> </strong> <span th:text="${blog.category.name}" class="t"></span>
+            </p>
+
+
         </div>
     </div>
 </div>

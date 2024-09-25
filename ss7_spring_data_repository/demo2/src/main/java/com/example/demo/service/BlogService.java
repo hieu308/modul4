@@ -3,7 +3,10 @@ package com.example.demo.service;
 import com.example.demo.model.Blog;
 import com.example.demo.repository.IBlogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
+
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -14,7 +17,7 @@ public class BlogService implements IBlogService {
 
     @Override
     public List<Blog> findAll() {
-        return  blogRepository.findAll();
+        return blogRepository.findAll();
     }
 
     @Override
@@ -24,8 +27,7 @@ public class BlogService implements IBlogService {
 
     @Override
     public void save(Blog blog) {
-  blogRepository.save(blog);
-
+        blogRepository.save(blog);
     }
 
     @Override
@@ -34,7 +36,12 @@ public class BlogService implements IBlogService {
     }
 
     @Override
-    public List<Blog> searchByName(String searchName) {
-        return blogRepository.searchByName("%" + searchName + "%");
+    public Page<Blog> findBlogByTitleContaining(String searchName, Pageable pageable) {
+        System.out.println("2");
+        if (searchName == null || searchName.isEmpty()) {
+            searchName = "";
+        }
+        String s = "%" + searchName + "%";
+        return blogRepository.findBlogByTitleContaining(s, pageable);
     }
 }

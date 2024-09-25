@@ -42,6 +42,12 @@
         <div class="text-center" >
             <button class="btn btn-primary btn-lg w-25" type="submit">Save</button>
         </div>
+        <select  th:field="*{category}" >
+            <option th:each="categorys :${categoryss}"
+                    th:value="${categorys.id}"
+                    th:text="${categorys.name}">
+            </option>
+        </select>
     </form>
 
 </div>

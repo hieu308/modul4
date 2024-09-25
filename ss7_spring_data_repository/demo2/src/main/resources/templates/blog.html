@@ -12,6 +12,7 @@
         .t {
             text-align: center;
         }
+
         #successAlert {
             position: fixed;
             top: 20px;
@@ -34,12 +35,11 @@
 
         <button type="button" class="btn btn-primary mb-3">Add blog</button>
     </a>
-
-
+    
 </div>
-<form action="/search" method="post" class="d-flex  mb-3 container w-50" >
-    <input name="nameBlog" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success"  type="submit">Search</button>
+<form action="" method="get" class="d-flex  mb-3 container w-50">
+    <input name="searchName" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
 </form>
 <div class="container">
     <table class="table table-hover table-bordered  " style="table-layout: fixed; width: 100%;">
@@ -49,19 +49,18 @@
             <td class="t" style="width: 10%;">ID</td>
             <td class="t">Title</td>
             <td class="t">Author</td>
-            <td class="t">Content</td>
+            <td class="t">Content</td>books
             <td class="t">Action</td>
+            <td class="t">Category</td>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="blog,loop:${blogs}">
+        <tr th:each="blog,loop:${blogPage}">
             <td th:text="${loop.count}" class="t"></td>
-            <td th:text="${blog.getId()}" class="t"></td>
+            <td th:text="${blog.id}" class="t"></td>
             <td th:text="${blog.getTitle()}" class="t"></td>
             <td th:text="${blog.getAuthor()}" class="t"></td>
             <td th:text="${blog.getContent()}" class="t"></td>
-
-
             <td class="t">
                 <a th:href="@{/view(id=${blog.getId()})}">
                     <button class="btn btn-info">View</button>
@@ -73,9 +72,14 @@
                         th:data-id="${blog.getId()}">Delete
                 </button>
             </td>
+            <td th:text="${blog.category.name}" class="t"></td>
         </tr>
         </tbody>
     </table>
+    <a th:if="${blogPage.hasPrevious()}"
+       th:href="@{/(page=${blogPage.number -1},searchName=${searchName})}">Previous</a>
+    <span th:text="${blogPage.number +1}"></span>/<span th:text="${blogPage.totalPages}"></span>
+    <a th:if="${blogPage.hasNext()}" th:href="@{/(page=${blogPage.number +1},searchName=${searchName})}">Next</a>
 </div>
 <div class="modal" tabindex="-1" id="delete">
     <div class="modal-dialog">

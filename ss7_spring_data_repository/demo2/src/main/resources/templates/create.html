@@ -36,9 +36,15 @@
         <div class="mb-3">
             <label for="c" class="form-label">Content</label>
             <textarea class="form-control" id="c" rows="3" th:field="*{content}" required></textarea>
-
         </div>
-
+        <label>
+            <select name="category" >
+                <option th:each="categorys :${categoryss}"
+                        th:value="${categorys.id}"
+                        th:text="${categorys.name}">
+                </option>
+            </select>
+        </label>
         <div class="text-center" >
             <button class="btn btn-primary btn-lg w-25" type="submit">Add</button>
         </div>
