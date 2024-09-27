@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Song;
-import com.example.demo.model.SongDto;
+import com.example.demo.dto.SongDto;
 import com.example.demo.service.ISongService;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,19 +25,19 @@ public class SongController {
     public String index(Model model) {
         List<Song> list = songService.findAll(); ;
         model.addAttribute("listSong", list);
-        return "index";
+        return "home";
     }
     @GetMapping("/create")
     public String create(Model model) {
         model.addAttribute("songDto", new SongDto());
-        return "add_song";
+        return "add";
     }
     @PostMapping("/add")
     public String add(@Valid @ModelAttribute("songDto") SongDto songDto, BindingResult bindingResult) {
         new SongDto().validate(songDto, bindingResult);
         if (bindingResult.hasErrors()) {
 
-            return "add_song";
+            return "add";
         }
         Song song = new Song();
         BeanUtils.copyProperties(songDto, song);
