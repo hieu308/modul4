@@ -14,10 +14,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -57,7 +54,7 @@ public class BlogController {
     public String save(@ModelAttribute("blog") Blog blog, RedirectAttributes redirectAttributes) {
         System.out.println(blog);
         blogService.save(blog);
-        redirectAttributes.addFlashAttribute("success", true); // Thêm thuộc tính success
+        redirectAttributes.addFlashAttribute("success", true);
         return "redirect:/";
     }
 
