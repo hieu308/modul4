@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<input id="name" placeholder="Enter name">
+<input name="gender" type="radio" value="1">Male
+<input name="gender" type="radio" value="0">Female
+<select id="classId">
+    <option value="1">C08</option>
+    <option value="2">C09</option>
+</select>
+<button id="btn-add">Save</button>
+
+
+
+<h2>Danh sách sinh viên</h2>
+<table border="1" style="border-collapse: collapse">
+    <thead>
+    <tr>
+        <td>STT</td>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Gender</td>
+        <td>Class name</td>
+    </tr>
+    </thead>
+    <tbody id="content" >
+
+    </tbody>
+
+</table>
+<h1>Header</h1>
+<script>
+    $(document).ready(function () {
+       setTimeout(display,2000);
+       $("#btn-add").click(function () {
+           let name = $("#name").val();
+           let gender = $('input[name="gender"]:checked').val();
+           let classId = $("#classId").val();
+
+           let student ={
+               name,
+               gender,
+               classes: {
+                   id: classId
+               }
+           }
+           $.ajax({
+               contentType: "application/json",
+               method: "POST",
+               data: JSON.stringify(student),
+               url: "http://localhost:8080/v1/api/students",
+               complete: function (response) {
+                   console.log(JSON.stringify(response));
+                   display();
+               }
+           })
+       })
+
+    });
+    function display() {
+      $.ajax({
+          contentType: "application/json",
+          method: "GET",
+          url: "http://localhost:8080/v1/api/students",
+          success: function (data,status) {
+              let content ="";
+              console.log(data);
+              console.log(status);
+              for (let i = 0; i <data.length ; i++) {
+                  content +=` <tr>
+                                <td>${i+1}</td>
+                                <td>${data[i].id}</td>
+                                <td>${data[i].name}</td>
+                                <td>${data[i].gender}</td>
+                                <td>${data[i].classes.name}</td>
+                            </tr>`
+              }
+              $("#content").html(content);
+          }
+      })
+    }
+</script>
+</body>
+</html>

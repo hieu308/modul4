@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
+import java.util.jar.JarOutputStream;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("v1/api/blogs")
 public class BlogRestController {
@@ -34,10 +36,12 @@ public class BlogRestController {
 
     @GetMapping("")
     public ResponseEntity<Page<Blog>> index(@RequestParam(defaultValue = "0") int page,
-                                            @RequestParam(defaultValue = "") String searchName, Model model) {
+                                            @RequestParam(defaultValue = "") String searchName) {
+        System.out.println("sn= "+searchName);
         Sort sort = Sort.by(Sort.Direction.DESC, "title");
         Pageable pageable = PageRequest.of(page, 2, sort);
         Page<Blog> blogPage = blogService.findBlogByTitleContaining(searchName, pageable);
+        System.out.println(blogPage);
         if (blogPage.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {

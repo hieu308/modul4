@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IBlogRepository extends JpaRepository<Blog, Long> {
-    @Query("SELECT b FROM Blog b WHERE b.title LIKE :title")
+    @Query(value = "SELECT * FROM Blog WHERE title LIKE :title", nativeQuery = true)
     Page<Blog> findBlogByTitleContaining(@Param("title") String title, Pageable pageable);
 
 }
