@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Category;
 import com.example.demo.service.CategoryService;
+import org.springframework.context.MessageSource;
 import org.springframework.data.domain.Pageable;
 
 import com.example.demo.model.Blog;
@@ -12,12 +13,16 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
 import org.springframework.data.domain.Sort;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 @Controller
 public class BlogController {
@@ -25,7 +30,8 @@ public class BlogController {
     private IBlogService blogService;
     @Autowired
     private CategoryService categoryService;
-
+    @Autowired
+    private MessageSource messageSource;
     @ModelAttribute("categoryss")
     public List<Category> category() {
         return categoryService.findAll();
@@ -87,6 +93,17 @@ public class BlogController {
         redirectAttributes.addFlashAttribute("success", true);
 
         return "redirect:/";
+    }
+    @GetMapping("/i18n/messages")
+    public ResponseEntity<Map<String, String>> getMessages(@RequestParam("lang") String lang) {
+        Locale locale = new Locale(lang);
+        Map<String, String> messages = new HashMap<>();
+        messages.put("title", messageSource.getMessage("title", null, locale));
+        messages.put("content", messageSource.getMessage("content", null, locale));
+        messages.put("author", messageSource.getMessage("author", null, locale));
+        messages.put("category", messageSource.getMessage("category", null, locale));
+        messages.put("action", messageSource.getMessage("action", null, locale));
+        return ResponseEntity.ok(messages);
     }
 
 }

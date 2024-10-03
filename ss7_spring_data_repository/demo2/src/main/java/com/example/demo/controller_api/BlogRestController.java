@@ -5,6 +5,7 @@ import com.example.demo.model.Category;
 import com.example.demo.service.CategoryService;
 import com.example.demo.service.IBlogService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -17,7 +18,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 import java.util.jar.JarOutputStream;
 
 @CrossOrigin("*")
@@ -37,11 +41,9 @@ public class BlogRestController {
     @GetMapping("")
     public ResponseEntity<Page<Blog>> index(@RequestParam(defaultValue = "0") int page,
                                             @RequestParam(defaultValue = "") String searchName) {
-        System.out.println("sn= "+searchName);
         Sort sort = Sort.by(Sort.Direction.DESC, "title");
         Pageable pageable = PageRequest.of(page, 2, sort);
         Page<Blog> blogPage = blogService.findBlogByTitleContaining(searchName, pageable);
-        System.out.println(blogPage);
         if (blogPage.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
@@ -86,5 +88,21 @@ public class BlogRestController {
         }
         blogService.save(blog);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+    @Autowired
+    MessageSource messageSource;
+    @GetMapping("/i18n/messages")
+    public ResponseEntity<Map<String, String>> getMessages(@RequestParam("lang") String lang) {
+        Locale locale = new Locale(lang);
+        System.out.println(lang);
+        System.out.println("đã vô");
+        Map<String, String> messages = new HashMap<>();
+        messages.put("title", messageSource.getMessage("title", null, locale));
+        System.out.println(messages);
+        messages.put("content", messageSource.getMessage("content", null, locale));
+        messages.put("author", messageSource.getMessage("author", null, locale));
+        messages.put("category", messageSource.getMessage("category", null, locale));
+        messages.put("action", messageSource.getMessage("action", null, locale));
+        return ResponseEntity.ok(messages);
     }
 }

@@ -39,6 +39,8 @@
 </form>
 
 
+<button id="changeLangToVietnamese">Tiếng Việt</button>
+<button id="changeLangToEnglish">Tiếng Anh</button>
 
 <div class="container">
     <table class="table table-hover table-bordered  " style="table-layout: fixed; width: 100%;">
@@ -46,11 +48,11 @@
         <tr>
             <td class="t" style="width: 10%;">#</td>
             <td class="t" style="width: 10%;">ID</td>
-            <td class="t">Title</td>
-            <td class="t">Content</td>
-            <td class="t">Author</td>
-            <td class="t">Category</td>
-            <td class="t">Action</td>
+            <td class="t" id="thTitle"></td>
+            <td class="t" id="thContent"></td>
+            <td class="t" id="thAuthor"></td>
+            <td class="t" id="thCategory"></td>
+            <td class="t"></td>
         </tr>
         </thead>
         <tbody id="content">
@@ -67,6 +69,7 @@
 
 <script>
     $(document).ready(function () {
+
 
         loadBlogs("", 0, true);
         let currentPage = 0;
@@ -104,12 +107,12 @@
                     <td class="t">${data.content[i].category.name}</td>
                     <td class="t">
                         <a>
-                            <button class="btn btn-info">View</button>
+                            <button class="btn btn-info" th:text="#{'view'}"></button>
                         </a>
                         <a>
-                            <button class="btn btn-warning">Edit</button>
+                            <button class="btn btn-warning" th:text="#{'edit'}"></button>
                         </a>
-                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Delete</button>
+                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" th:text="#{'delete'}"></button>
                     </td>
                 </tr>`;
                     }
@@ -128,7 +131,36 @@
         }
 
     });
+    function loadMessages(lang) {
+        $.ajax({
+            url: 'http://localhost:8080/v1/api/blogs/i18n/messages',
+            type: 'GET',
+            data: { lang: lang },
+            success: function(response) {
+                console.log(response)
+                $('#thTitle').text(response.title);
+                $('#thContent').text(response.content);
+                $('#thAuthor').text(response.author);
+                $('#thCategory').text(response.category);
+                $('#action').text(response.action);
+            },
+            error: function() {
+                console.error('Could not load messages');
+            }
+        });
+    }
 
+
+
+
+    $('#changeLangToVietnamese').click(function() {
+        loadMessages('vi');
+        console.log("tiếng việt")
+    });
+    $('#changeLangToEnglish').click(function() {
+        loadMessages('en');
+
+    });
 
 </script>
 </body>
