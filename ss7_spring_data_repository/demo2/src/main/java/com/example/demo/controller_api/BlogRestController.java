@@ -41,9 +41,11 @@ public class BlogRestController {
     @GetMapping("")
     public ResponseEntity<Page<Blog>> index(@RequestParam(defaultValue = "0") int page,
                                             @RequestParam(defaultValue = "") String searchName) {
+        System.out.println("sn= " + searchName);
         Sort sort = Sort.by(Sort.Direction.DESC, "title");
         Pageable pageable = PageRequest.of(page, 2, sort);
         Page<Blog> blogPage = blogService.findBlogByTitleContaining(searchName, pageable);
+        System.out.println(blogPage);
         if (blogPage.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
@@ -51,6 +53,10 @@ public class BlogRestController {
         }
     }
 
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
 
     @PostMapping(value = "")
     public ResponseEntity<Blog> save(@RequestBody Blog blog) {
@@ -89,13 +95,14 @@ public class BlogRestController {
         blogService.save(blog);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
     @Autowired
     MessageSource messageSource;
+
     @GetMapping("/i18n/messages")
     public ResponseEntity<Map<String, String>> getMessages(@RequestParam("lang") String lang) {
         Locale locale = new Locale(lang);
-        System.out.println(lang);
-        System.out.println("đã vô");
+
         Map<String, String> messages = new HashMap<>();
         messages.put("title", messageSource.getMessage("title", null, locale));
         System.out.println(messages);

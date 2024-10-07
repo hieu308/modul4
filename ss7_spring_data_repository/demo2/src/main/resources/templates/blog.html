@@ -56,7 +56,28 @@
         </tr>
         </thead>
         <tbody id="content">
+        <tr th:each="blog,loop:${blogPage}">
+            <td class="t" th:text="${loop.count}"></td>
+            <td class="t" th:text="${blog.id}"></td>
+            <td class="t" th:text="${blog.title}"></td>
+            <td class="t" th:text="${blog.content}"></td>
+            <td class="t" th:text="${blog.author}"></td>
+            <td class="t" th:text="${blog.category.name}"></td>
 
+            <td>
+                <a>
+                    <button class="btn btn-info" >view</button>
+                </a>
+                <a>
+                    <button class="btn btn-warning" th:text="#{'edit'}">edit</button>
+                </a>
+                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" >
+                    delete
+                </button>
+            </td>
+
+
+        </tr>
         </tbody>
     </table>
     <button id="loadMore" class="btn btn-primary">Load More</button>
@@ -69,7 +90,7 @@
 
 <script>
     $(document).ready(function () {
-
+        loadMessages("vi")
 
         loadBlogs("", 0, true);
         let currentPage = 0;
@@ -106,13 +127,16 @@
                     <td class="t">${data.content[i].author}</td>
                     <td class="t">${data.content[i].category.name}</td>
                     <td class="t">
-                        <a>
-                            <button class="btn btn-info" th:text="#{'view'}"></button>
-                        </a>
-                        <a>
-                            <button class="btn btn-warning" th:text="#{'edit'}"></button>
-                        </a>
-                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" th:text="#{'delete'}"></button>
+        <td>
+            <a>
+                <button class="btn btn-info" th:text="#{'view'}">view</button>
+            </a>
+            <a>
+                <button class="btn btn-warning" th:text="#{'edit'}">edit</button>
+            </a>
+            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" th:text="#{'delete'}">delete</button>
+        </td>
+
                     </td>
                 </tr>`;
                     }
@@ -131,33 +155,32 @@
         }
 
     });
+
     function loadMessages(lang) {
         $.ajax({
             url: 'http://localhost:8080/v1/api/blogs/i18n/messages',
             type: 'GET',
-            data: { lang: lang },
-            success: function(response) {
-                console.log(response)
+            data: {lang: lang},
+            success: function (response) {
+
                 $('#thTitle').text(response.title);
                 $('#thContent').text(response.content);
                 $('#thAuthor').text(response.author);
                 $('#thCategory').text(response.category);
                 $('#action').text(response.action);
             },
-            error: function() {
+            error: function () {
                 console.error('Could not load messages');
             }
         });
     }
 
 
-
-
-    $('#changeLangToVietnamese').click(function() {
+    $('#changeLangToVietnamese').click(function () {
         loadMessages('vi');
         console.log("tiếng việt")
     });
-    $('#changeLangToEnglish').click(function() {
+    $('#changeLangToEnglish').click(function () {
         loadMessages('en');
 
     });

@@ -32,6 +32,7 @@ public class BlogController {
     private CategoryService categoryService;
     @Autowired
     private MessageSource messageSource;
+
     @ModelAttribute("categoryss")
     public List<Category> category() {
         return categoryService.findAll();
@@ -46,6 +47,11 @@ public class BlogController {
         model.addAttribute("blogPage", blogPage);
         model.addAttribute("searchName", searchName);
         return "blog";
+    }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
     }
 
     @GetMapping("/create")
@@ -94,6 +100,7 @@ public class BlogController {
 
         return "redirect:/";
     }
+
     @GetMapping("/i18n/messages")
     public ResponseEntity<Map<String, String>> getMessages(@RequestParam("lang") String lang) {
         Locale locale = new Locale(lang);
